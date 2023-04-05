@@ -10,4 +10,6 @@ public interface IServiceCDServidor extends Remote {
     void registrarCD(CD cd) throws RemoteException;
 
     List<CD> obterCDs() throws RemoteException;
+
+    CD obterCD(String album) throws RemoteException;
 }

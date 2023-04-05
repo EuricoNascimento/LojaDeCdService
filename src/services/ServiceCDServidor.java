@@ -25,6 +25,16 @@ public class ServiceCDServidor extends UnicastRemoteObject implements IServiceCD
         return cds;
     }
 
+    @Override
+    public CD obterCD(String album) throws RemoteException {
+        for (CD cd: cds) {
+            if (cd.getNomeAlbum().equals(album)) {
+                return cd;
+            }
+        }
+        return null;
+    }
+
     private void inicializarCds() {
         cds.add(new CD("Thriller", "Michael Jackson", "Pop", 25.0));
         cds.add(new CD("Back in Black", "AC/DC", "Rock", 20.0));
